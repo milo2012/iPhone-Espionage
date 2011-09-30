@@ -1,0 +1,10 @@
+Package: com.yourcompany.kbhook2
+Name: kbhook2
+Depends: mobilesubstrate
+Version: 0.0.1-110
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Milo
+Author: Milo
+Section: Tweaks
+Installed-Size: 16
