@@ -1,0 +1,47 @@
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudio/CoreAudioTypes.h>
+#import <Foundation/Foundation.h>
+
+
+
+int main(int argc, char **argv, char **envp) {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
+	NSDate *now = [[NSDate alloc] init];
+	NSTimer *timer = [[NSTimer alloc] initWithFireDate:now
+		interval:.01
+		target:obj
+		selector:@selector(startIt:)
+		userInfo:nil
+		repeats:NO];
+		
+
+
+	NSURL *url = [NSURL fileURLWithPath:@"/tmp1/tempaudio.caf"];
+  	NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
+  	  	[NSNumber numberWithFloat: 44100.0],                 AVSampleRateKey,
+  	  	[NSNumber numberWithInt: kAudioFormatAppleLossless], AVFormatIDKey,
+  	  	[NSNumber numberWithInt: 1],                         AVNumberOfChannelsKey,
+   	  	[NSNumber numberWithInt: AVAudioQualityMax],         AVEncoderAudioQualityKey,
+  	  nil];
+  	//NSError *error;
+	AVAudioRecorder *recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:nil];
+
+ 	//recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
+
+  	if (recorder) {
+  		[recorder prepareToRecord];
+  		recorder.meteringEnabled = YES;
+  		[recorder record];
+  		NSLog(@"Record OK");
+  	} else
+  		NSLog(@"Error");
+
+
+
+	[recorder release];
+	[pool release];
+	return 0;
+}
+
+// vim:ft=objc

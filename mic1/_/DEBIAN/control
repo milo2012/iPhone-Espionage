@@ -1,0 +1,11 @@
+Package: com.yourcompany.mic1
+Name: mic1
+Depends: 
+Version: 0.0.1-12
+Architecture: iphoneos-arm
+Description: An awesome tool of some sort!!
+Maintainer: Milo
+Author: Milo
+Section: System
+Tag: role::hacker
+Installed-Size: 16
