@@ -1,7 +1,7 @@
 Package: com.yourcompany.sql1
 Name: sql1
 Depends: 
-Version: 0.0.1-31
+Version: 0.0.1-32
 Architecture: iphoneos-arm
 Description: An awesome tool of some sort!!
 Maintainer: System Administrator
