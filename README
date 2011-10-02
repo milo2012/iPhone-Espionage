@@ -4,3 +4,4 @@ sms1		SMS interception
 mic1		Record microphone on iPhone for 30 seconds
 whatsapp1	Intercept incoming and outgoing whatsapp messages and forward to external email
 location1	Sends GPS location to email at x interval
+screenCapture1	Takes screenshot of current screen
