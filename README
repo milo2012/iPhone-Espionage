@@ -2,3 +2,5 @@ kbhook2		Keyboard Logger for iPhone 4
 takePicture	Take photo of front camera using command line
 sms1		SMS interception
 mic1		Record microphone on iPhone for 30 seconds
+whatsapp1	Intercept incoming and outgoing whatsapp messages and forward to external email
+
