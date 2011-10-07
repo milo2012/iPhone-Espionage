@@ -1,0 +1,11 @@
+Package: com.yourcompany.test2
+Name: test2
+Depends: 
+Version: 0.0.1-3
+Architecture: iphoneos-arm
+Description: An awesome tool of some sort!!
+Maintainer: Milo
+Author: Milo
+Section: System
+Tag: role::hacker
+Installed-Size: 16
