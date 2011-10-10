@@ -1,10 +1,10 @@
 Package: com.yourcompany.tweak1
 Name: tweak1
 Depends: mobilesubstrate
-Version: 0.0.1-62
+Version: 0.0.1-73
 Architecture: iphoneos-arm
 Description: An awesome MobileSubstrate tweak!
 Maintainer: svp
 Author: svp
 Section: Tweaks
-Installed-Size: 5216
+Installed-Size: 5224
