@@ -14,8 +14,9 @@ cd /tmp1
 wget http://www.libimobiledevice.org/downloads/ideviceinstaller-1.0.0.tar.bz2
 bunzip2 -d ideviceinstaller-1.0.0.tar.bz2 && tar xvf ideviceinstaller-1.0.0.tar && cd ideviceinstaller-1.0.0 && ./configure && make && make install
 cd /tmp1
-apt-get install libgtk2.0-dev libnautilus-extension-dev
-wget http://www.libimobiledevice.org/downloads/nautilus-ideviceinfo-0.1.0.tar.bz2 && cd nautilus-ideviceinfo-0.1.0 && ./configure && make && make install
+apt-get install libgtk2.0-dev libnautilus-extension-dev intltool
+wget http://www.libimobiledevice.org/downloads/nautilus-ideviceinfo-0.1.0.tar.bz2 
+bunzip2 -d nautilus-ideviceinfo-0.1.0.tar.bz2 && tar xvf nautilus-ideviceinfo-0.1.0.tar && cd nautilus-ideviceinfo-0.1.0 && ./configure && make && make install
 
 
 

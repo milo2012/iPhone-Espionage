@@ -13,6 +13,8 @@ int main(int argc, char **argv, char **envp) {
 	NSString *googleMaps = @"/mobile/Library/Caches/Map/Tiles/MapTiles.sqlitedb";
 	NSString *emailDB = @"/mobile/Library/Mail/Envelope Index";
 	NSString *voiceMail = @"/mobile/Library/Voicemail/voicemail.db";	
+	NSString *addressBook = @"/private/var/root/Library/AddressBook/AddressBook.sqlitedb";
+	NSString *addressBookImages = @"/private/var/root/Library/AddressBook/AddressBookImages.sqlitedb";
 
 	sqlite3 *database;
 	sqlite3_stmt *statement;
