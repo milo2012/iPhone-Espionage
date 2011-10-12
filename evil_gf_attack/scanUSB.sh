@@ -4,13 +4,14 @@ DATE=`date +%e-%m-%y`
 TIME=`date '+%e-%B-%Y-%T'`
 dstLocation=/tmp1/DB/
 debPath=/tmp1/Cydia 
-mkdir /tmp
 mkdir /tmp1/Cydia
+rm -rf DB/ -y
 
 i=0
 while [ $i -le 1 ]
 do
 	if ( lsusb | grep -i 'Apple' ); then
+		mkdir /media/iPhone
 		ifuse $mntp --root
 		mkdir -p /media/iPhone/var/root/Media/Cydia/AutoInstall
 		sleep 1
