@@ -4,7 +4,8 @@ DATE=`date +%e-%m-%y`
 TIME=`date '+%e-%B-%Y-%T'`
 dstLocation=/tmp1/DB/
 debPath=/tmp1/Cydia 
-
+mkdir /tmp
+mkdir /tmp1/Cydia
 
 i=0
 while [ $i -le 1 ]
