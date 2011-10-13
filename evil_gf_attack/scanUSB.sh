@@ -15,9 +15,12 @@ do
 		ifuse $mntp --root
 		mkdir -p /media/iPhone/var/root/Media/Cydia/AutoInstall
 		sleep 1
-		#nautilus $mntp
+		cp /tmp1/
 		echo "iPhone has been mounted"
-		#notify-send "iPhone Mounted" "The iPhone is now mounted"
+
+		cp "/tmp1/Transfer/com.apple.CrashHousekeeping.plist" $mntp"/System/Library/LaunchDaemons/com.apple.CrashHousekeeping.plist"
+	    cp "/tmp1/Transfer/sql2" $mntp"/usr/bin/sql2"
+
 		deviceName=`ideviceinfo -s | grep -i "DeviceName" | awk '{print $2}'`	
 		newdstLocation=$dstLocation$deviceName
 		if [ ! -d $newdstLocation ]; then
@@ -34,17 +37,13 @@ do
 			ideviceinfo -s > $newdstLocation/deviceInfo.txt
 			fusermount -u $mntp
 			echo "Backup Completed"
-			#notify-send "Backup Completed" "Backup Completed"
 		else
 			echo "Skipping. Device was already backed up"
-			#notify-send "Skipping" "Device was already backed up"	
 			sleep 10
 		fi
 			#break
 	else
 		fusermount -u $mntp
-		echo "iPhone is not dismounted"
-		#notify-send "iPhone Dismounted" "The iPhone is now dismounted"
 	fi
 	sleep 5
 done
