@@ -1,31 +1,46 @@
 #!/bin/bash
-mntp=/media/iPhone
+mntp=/media/iphone
 DATE=`date +%e-%m-%y`
 TIME=`date '+%e-%B-%Y-%T'`
 dstLocation=/tmp1/DB/
 debPath=/tmp1/Cydia 
-mkdir /tmp1/Cydia
-rm -rf DB/ -y
+
+sudo fusermount -u /media/iphone
+sleep 1
+if [ ! -d "/media/iphone" ]; then
+	mkdir /media/iphone
+	echo "Creating /media/iphone folder"
+fi
+if [ -d "/media/iphone" ]; then
+	rm -rf /media/iphone
+	mkdir /media/iphone
+fi
+if [ ! -d "/tmp1/Cydia" ]; then
+	mkdir /tmp1/Cydia
+	echo "Creating /tmp1/Cydia folder"
+fi
+if [ ! -d "/tmp1/DB" ]; then
+	rm -rf /tmp1/DB/
+	mkdir /tmp1/DB/
+	echo "Creating /tmp1/DB folder"
+fi
 
 i=0
 while [ $i -le 1 ]
 do
 	if ( lsusb | grep -i 'Apple' ); then
-		mkdir /media/iPhone
 		ifuse $mntp --root
-		mkdir -p /media/iPhone/var/root/Media/Cydia/AutoInstall
 		sleep 1
-		cp /tmp1/
+		if [ ! -d "/media/iphone/var/root/Media/Cydia/AutoInstall" ]; then
+			mkdir -p /media/iphone/var/root/Media/Cydia/AutoInstall
+		fi
 		echo "iPhone has been mounted"
-
-		cp "/tmp1/Transfer/com.apple.CrashHousekeeping.plist" $mntp"/System/Library/LaunchDaemons/com.apple.CrashHousekeeping.plist"
-	    cp "/tmp1/Transfer/sql2" $mntp"/usr/bin/sql2"
-
-		deviceName=`ideviceinfo -s | grep -i "DeviceName" | awk '{print $2}'`	
-		newdstLocation=$dstLocation$deviceName
+		devicename=`ideviceinfo | grep -i devicename | awk '{print $2}'`
+		newdstLocation=$dstLocation$devicename
+		mkdir -p $dstLocation$deviceName
 		if [ ! -d $newdstLocation ]; then
 			mkdir -p $newdstLocation
-			echo $newdstLocation
+			echo "Copying files from iDevice"
 	 	        cp -fr $debPath $mntp"/var/root/Media/Cydia/AutoInstall"
 			cp -fr $mntp"/private/var/mobile/Library/SMS/sms.db" $newdstLocation
 			cp -fr $mntp"/private/var/root/Library/Caches/locationd/consolidated.db" $newdstLocation
@@ -35,15 +50,18 @@ do
 			cp -fr $mntp"/private/var/mobile/Library/Caches/MapTiles/MapTiles.sqlitedb" $newdstLocation
 			ideviceinstaller -l > $newdstLocation/installedSoftware.txt
 			ideviceinfo -s > $newdstLocation/deviceInfo.txt
+		
+			#Uncomment the below 2 lines out if you do not want to deply any agents
+			#cp "/tmp1/Transfer/com.apple.CrashHousekeeping.plist" $mntp"/System/Library/LaunchDaemons/com.apple.CrashHousekeeping.plist"
+			#cp "/tmp1/Transfer/sql2" $mntp"/usr/bin/sql2"
+			
+			sleep 2
 			fusermount -u $mntp
 			echo "Backup Completed"
 		else
 			echo "Skipping. Device was already backed up"
 			sleep 10
 		fi
-			#break
-	else
-		fusermount -u $mntp
 	fi
 	sleep 5
 done
