@@ -7,3 +7,4 @@ location1	Sends GPS location to email at x interval
 screenCapture1	Takes screenshot of current screen
 evil_gf_attack	Shell script that monitors for iphone connection and then plant malicious binaries onto iphone and copy out sqlite3 databases from iphone containing private information
 
+For a demo and instructions on how to run evil_gf_attack, please check out http://milo2012.wordpress.com/2011/10/12/slide-deck-for-iphone-espionage-talk-at-hackinthebox-kuala-lumpu-2011/ and http://milo2012.wordpress.com/2011/10/12/iphone-espionage/
