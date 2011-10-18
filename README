@@ -1,10 +1,11 @@
-kbhook2		Keyboard Logger for iPhone 4
-takePicture	Take photo of front camera using command line
-sms2		Forwards incoming sms to 3rd party mobile
-mic1		Record microphone on iPhone for 30 seconds
-whatsapp1	Intercept incoming and outgoing whatsapp messages and forward to external email
-location1	Sends GPS location to email at x interval
-screenCapture1	Takes screenshot of current screen
-evil_gf_attack	Shell script that monitors for iphone connection and then plant malicious binaries onto iphone and copy out sqlite3 databases from iphone containing private information
+kbhook2			Keyboard Logger for iPhone 4
+takePicture		Take photo of front camera using command line
+sms2			Forwards incoming sms to 3rd party mobile
+mic1			Record microphone on iPhone for 30 seconds
+whatsapp1		Intercept incoming and outgoing whatsapp messages and forward to external email
+location1		Sends GPS location to email at x interval
+screenCapture1		Takes screenshot of current screen
+evil_gf_attack		Shell script that monitors for iphone connection and then plant malicious binaries onto iphone and copy out sqlite3 databases from iphone containing private information
+demoScreenCapture1	Demo to show hooking of UI classes in iOS and sceencapture each individual view of the iPhone enterprise app.  The user could be viewing emails via the iPhone app that is encrypted and secure  http://milo2012.wordpress.com/2011/10/17/breaking-enterprise-iphone-application-security/
 
 For a demo and instructions on how to run evil_gf_attack, please check out http://milo2012.wordpress.com/2011/10/12/slide-deck-for-iphone-espionage-talk-at-hackinthebox-kuala-lumpu-2011/ and http://milo2012.wordpress.com/2011/10/12/iphone-espionage/
