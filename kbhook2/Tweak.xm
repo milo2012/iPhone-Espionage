@@ -5,9 +5,14 @@
 //[fileManager removeItemAtPath:filePath error:NULL];
 
 %hook UIKeyboardImpl
-
 NSMutableString *keyboardInput = [[NSMutableString alloc] init];
 NSString *str = [[NSString alloc] init];
+
+
+-(void)removeFromSuperview{
+        NSLog(@"removeFromSuperView");         
+        %orig;
+}
 
 -(BOOL)returnKeyEnabled{
 	if([keyboardInput length]!=0){

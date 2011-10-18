@@ -1,0 +1,9 @@
+Package: com.yourcompany.demoscreencapture1
+Name: demoScreenCapture1
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: System Administrator
+Author: System Administrator
+Section: Tweaks
