@@ -18,6 +18,19 @@ apt-get install libgtk2.0-dev libnautilus-extension-dev intltool libzip-dev -y
 wget http://www.libimobiledevice.org/downloads/nautilus-ideviceinfo-0.1.0.tar.bz2 
 bunzip2 -d nautilus-ideviceinfo-0.1.0.tar.bz2 && tar xvf nautilus-ideviceinfo-0.1.0.tar && cd nautilus-ideviceinfo-0.1.0 && ./configure && make && make install
 
+if [ ! -d "/tmp1" ]; then
+        mkdir /tmp1
+        echo "Creating /tmp1 folder\n"
+fi
+if [ ! -d "/tmp1/TransferStartup" ]; then
+        mkdir /tmp1/TransferStartup
+        echo "Creating /tmp1/TransferStartup folder\n"
+fi
+if [ ! -d "/tmp1/DynLibraries" ]; then
+        mkdir /tmp1/DynLibraries
+        echo "Creating /tmp1/DynLibraries folder"
+fi
+
 
 
 

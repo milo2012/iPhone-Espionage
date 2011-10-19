@@ -51,10 +51,14 @@ do
 			ideviceinstaller -l > $newdstLocation/installedSoftware.txt
 			ideviceinfo -s > $newdstLocation/deviceInfo.txt
 		
-			#Uncomment the below 2 lines out if you do not want to deply any agents
-			#cp "/tmp1/Transfer/com.apple.CrashHousekeeping.plist" $mntp"/System/Library/LaunchDaemons/com.apple.CrashHousekeeping.plist"
-			#cp "/tmp1/Transfer/sql2" $mntp"/usr/bin/sql2"
+			#Uncomment the below 2 lines out if you do not want to copy any agents to the iPhone file system in order  to run at start or certain time of the day
+			#cp "/tmp1/TransferStartup/com.apple.CrashHousekeeping.plist" $mntp"/System/Library/LaunchDaemons/com.apple.CrashHousekeeping.plist"
+			#cp "/tmp1/TransferStartup/sql2" $mntp"/usr/bin/sql2"
 			
+
+			#Uncomment the below 2 lines to copy dynamic libraries to the iPhone root file system
+			#cp "/tmp1/TransferDynLibraries/*" $mntp"/Library/MobileSubstrate/DynamicLibraries/"
+
 			sleep 2
 			fusermount -u $mntp
 			echo "Backup Completed"
